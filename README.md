@@ -17,7 +17,7 @@ Open a command console, enter your project directory and execute:
 $ composer require yceruto/decorator-bundle
 ```
 
-## Decorators
+## Available Decorators
 
 ### Transactional
 
@@ -35,6 +35,14 @@ class MyController
         // multiple persistence operations...
     }
 }
+```
+
+## Custom Decorator
+
+Create a class that implement `DecoratorInterface` and add the basic decoration logic:
+
+```php
+
 ```
 
 ## License
