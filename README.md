@@ -21,11 +21,11 @@ $ composer require yceruto/decorator-bundle
 
 ### Transactional
 
-A Doctrine ORM decorator that wraps persistence method  operations within 
+A Doctrine ORM decorator that wraps persistence method operations within 
 a single Doctrine transaction. In case you're using multiple entity managers, 
 you can pass the name of the entity manager as parameter. 
 
-For example:
+Example:
 ```php
 class MyController
 {
@@ -33,6 +33,29 @@ class MyController
     public function __invoke(Request $request): Response
     {
         // multiple persistence operations...
+    }
+}
+```
+
+### Serialize
+
+A Serializer decorator that encode the result of your controller into
+a specific format (default: json).
+
+Options:
+ * `format` the serialization format (default: json)
+ * `context` the serialization context
+ * `status` the response status (default: 200)
+ * `headers` the response headers
+
+Example:
+```php
+class MyController
+{
+    #[Serialize]
+    public function __invoke(): array
+    {
+        return ['success' => true];
     }
 }
 ```
