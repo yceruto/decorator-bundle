@@ -1,0 +1,5 @@
+controllers:
+    resource:
+        path: ./Controller/
+        namespace: Yceruto\DecoratorBundle\Tests\Integration\App\DecorateController\Controller
+    type: attribute

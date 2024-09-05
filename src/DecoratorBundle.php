@@ -17,6 +17,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+use Symfony\Component\Serializer\SerializerInterface;
 use Yceruto\Decorator\DecoratorInterface;
 use Yceruto\DecoratorBundle\DependencyInjection\DecoratorsPass;
 
@@ -36,6 +37,10 @@ class DecoratorBundle extends AbstractBundle
 
         if (interface_exists(EntityManagerInterface::class)) {
             $container->import('../config/doctrine.php');
+        }
+
+        if (interface_exists(SerializerInterface::class)) {
+            $container->import('../config/serializer.php');
         }
     }
 }

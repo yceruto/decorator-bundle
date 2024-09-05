@@ -37,14 +37,6 @@ class MyController
 }
 ```
 
-## Custom Decorator
-
-Create a class that implement `DecoratorInterface` and add the basic decoration logic:
-
-```php
-
-```
-
 ## License
 
 This software is published under the [MIT License](LICENSE)

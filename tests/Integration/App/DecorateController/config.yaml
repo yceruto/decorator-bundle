@@ -1,0 +1,11 @@
+imports:
+    - '../config.yaml'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator\Secured:
+        calls:
+            - [setRequestStack, ['@request_stack']]

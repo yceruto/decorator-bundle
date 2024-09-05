@@ -1,0 +1,34 @@
+framework:
+    annotations: false
+    serializer: true
+    http_method_override: false
+    handle_all_throwables: true
+    secret: test
+    router:
+        resource: '%kernel.project_dir%/%kernel.test_case%/routes.yaml'
+        utf8: true
+    test: true
+    default_locale: en
+    enabled_locales: ['en', 'fr']
+    session:
+        handler_id: null
+        storage_factory_id: session.storage.factory.mock_file
+        cookie_secure: auto
+        cookie_samesite: lax
+    php_errors:
+        log: true
+
+doctrine:
+    dbal:
+        url: ~
+        dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+
+        profiling_collect_backtrace: '%kernel.debug%'
+    orm:
+
+services:
+    logger:
+        class: Psr\Log\NullLogger
+
+imports:
+    - '../../../vendor/symfony/framework-bundle/Resources/config/mime_type.php'
