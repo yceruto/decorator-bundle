@@ -4,7 +4,6 @@
 ![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Frepo.packagist.org%2Fp2%2Fyceruto%2Fdecorator-bundle.json&query=%24.packages%5B%22yceruto%2Fdecorator-bundle%22%5D%5B0%5D.version&label=version)
 ![PHP](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fyceruto%2Fdecorator-bundle%2Fraw%2Fmain%2Fcomposer.json&query=require.php&label=php)
 ![GitHub License](https://img.shields.io/github/license/yceruto/decorator-bundle)
-![Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpackagist.org%2Fpackages%2Fyceruto%2Fdecorator-bundle.json&query=package.downloads.total&label=downloads)
 
 Symfony framework integration of the [`yceruto/decorator`](https://github.com/yceruto/decorator) library.
  * Enables decoration capabilities for Symfony controllers.
