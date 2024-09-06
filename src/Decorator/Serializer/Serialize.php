@@ -13,22 +13,16 @@ declare(strict_types=1);
 
 namespace Yceruto\DecoratorBundle\Decorator\Serializer;
 
-use Yceruto\Decorator\Attribute\Decorate;
+use Yceruto\Decorator\Attribute\DecoratorMetadata;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-final class Serialize extends Decorate
+final class Serialize extends DecoratorMetadata
 {
     public function __construct(
-        string $format = 'json',
-        array $context = [],
-        int $status = 200,
-        array $headers = [],
+        public readonly string $format = 'json',
+        public readonly array $context = [],
+        public readonly int $status = 200,
+        public readonly array $headers = [],
     ) {
-        parent::__construct(SerializerDecorator::class, [
-            'format' => $format,
-            'context' => $context,
-            'status' => $status,
-            'headers' => $headers,
-        ]);
     }
 }

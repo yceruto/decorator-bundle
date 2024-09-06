@@ -20,7 +20,7 @@ use Symfony\Component\Serializer\Exception\UnsupportedFormatException;
 use Symfony\Component\Serializer\SerializerInterface;
 use Yceruto\Decorator\DecoratorInterface;
 
-final readonly class SerializerDecorator implements DecoratorInterface
+final readonly class SerializeDecorator implements DecoratorInterface
 {
     public function __construct(
         private SerializerInterface $serializer,
@@ -28,11 +28,12 @@ final readonly class SerializerDecorator implements DecoratorInterface
     ) {
     }
 
-    public function decorate(\Closure $func, string $format = 'json', array $context = [], int $status = 200, array $headers = []): \Closure
+    public function decorate(\Closure $func, Serialize $serialize = new Serialize()): \Closure
     {
-        $headers['Content-Type'] ??= current($this->mimeTypes->getMimeTypes($format)) ?: throw new UnsupportedFormatException(sprintf('Format "%s" is not supported.', $format));
+        $headers = $serialize->headers;
+        $headers['Content-Type'] ??= current($this->mimeTypes->getMimeTypes($serialize->format)) ?: throw new UnsupportedFormatException(sprintf('Format "%s" is not supported.', $serialize->format));
 
-        return function (mixed ...$args) use ($func, $format, $context, $status, $headers): Response {
+        return function (mixed ...$args) use ($func, $serialize, $headers): Response {
             $result = $func(...$args);
 
             if ($result instanceof RedirectResponse) {
@@ -43,9 +44,9 @@ final readonly class SerializerDecorator implements DecoratorInterface
                 return new Response(null, 204, $headers);
             }
 
-            $content = $this->serializer->serialize($result, $format, $context);
+            $content = $this->serializer->serialize($result, $serialize->format, $serialize->context);
 
-            return new Response($content, $status, $headers);
+            return new Response($content, $serialize->status, $headers);
         };
     }
 }

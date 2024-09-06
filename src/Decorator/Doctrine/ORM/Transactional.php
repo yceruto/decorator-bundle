@@ -13,19 +13,19 @@ declare(strict_types=1);
 
 namespace Yceruto\DecoratorBundle\Decorator\Doctrine\ORM;
 
-use Yceruto\Decorator\Attribute\Decorate;
+use Yceruto\Decorator\Attribute\DecoratorMetadata;
 
 /**
  * Wraps persistence method operations within a single Doctrine transaction.
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
-final class Transactional extends Decorate
+final class Transactional extends DecoratorMetadata
 {
     /**
      * @param string|null $name The entity manager name (null for the default one)
      */
-    public function __construct(?string $name = null)
-    {
-        parent::__construct(self::class, ['name' => $name]);
+    public function __construct(
+        public readonly ?string $name = null,
+    ) {
     }
 }

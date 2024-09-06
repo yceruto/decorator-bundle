@@ -24,12 +24,12 @@ final readonly class TransactionalDecorator implements DecoratorInterface
     ) {
     }
 
-    public function decorate(\Closure $func, ?string $name = null): \Closure
+    public function decorate(\Closure $func, Transactional $transactional = new Transactional()): \Closure
     {
-        $entityManager = $this->managerRegistry->getManager($name);
+        $entityManager = $this->managerRegistry->getManager($transactional->name);
 
         if (!$entityManager instanceof EntityManagerInterface) {
-            throw new \RuntimeException(\sprintf('The manager "%s" is not an entity manager.', $name));
+            throw new \RuntimeException(\sprintf('The manager "%s" is not an entity manager.', $transactional->name));
         }
 
         return static function (mixed ...$args) use ($func, $entityManager) {

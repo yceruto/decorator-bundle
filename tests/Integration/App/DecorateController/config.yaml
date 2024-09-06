@@ -6,6 +6,4 @@ services:
         autowire: true
         autoconfigure: true
 
-    Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator\Secured:
-        calls:
-            - [setRequestStack, ['@request_stack']]
+    Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator\SecuredDecorator: ~
