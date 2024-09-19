@@ -2,9 +2,9 @@
 
 namespace Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator;
 
-use Yceruto\Decorator\Attribute\DecoratorMetadata;
+use Yceruto\Decorator\Attribute\DecoratorAttribute;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-final class Secured extends DecoratorMetadata
+final class Secured extends DecoratorAttribute
 {
 }

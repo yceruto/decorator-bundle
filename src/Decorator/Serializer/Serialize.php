@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Yceruto\DecoratorBundle\Decorator\Serializer;
 
-use Yceruto\Decorator\Attribute\DecoratorMetadata;
+use Yceruto\Decorator\Attribute\DecoratorAttribute;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-final class Serialize extends DecoratorMetadata
+final class Serialize extends DecoratorAttribute
 {
     public function __construct(
         public readonly string $format = 'json',
