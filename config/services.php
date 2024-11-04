@@ -2,6 +2,7 @@
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Yceruto\Decorator\CallableDecorator;
+use Yceruto\Decorator\CompoundDecorator;
 use Yceruto\Decorator\DecoratorInterface;
 use Yceruto\Decorator\Resolver\DecoratorResolverInterface;
 use Yceruto\DecoratorBundle\Controller\Listener\DecorateControllerListener;
@@ -16,6 +17,12 @@ return static function (ContainerConfigurator $container): void {
             ])
 
         ->alias(DecoratorInterface::class, 'decorator.callable_decorator')
+
+        ->set(CompoundDecorator::class)
+            ->args([
+                service(DecoratorResolverInterface::class),
+            ])
+            ->tag('decorator')
 
         ->set(DecorateControllerListener::class)
             ->args([

@@ -13,9 +13,17 @@ declare(strict_types=1);
 
 namespace Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator;
 
-use Yceruto\Decorator\Attribute\DecoratorAttribute;
+use Yceruto\Decorator\Attribute\Compound;
+use Yceruto\DecoratorBundle\Decorator\Serializer\Serialize;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-final class Secured extends DecoratorAttribute
+class SecuredSerialize extends Compound
 {
+    public function getDecorators(array $options): array
+    {
+        return [
+            new Secured(),
+            new Serialize(),
+        ];
+    }
 }

@@ -93,4 +93,18 @@ class DecorateControllerTest extends AbstractWebTestCase
         self::assertResponseHeaderSame('Content-Type', 'application/json');
         self::assertSame('{"success":true}', $client->getInternalResponse()->getContent());
     }
+
+    public function testCompoundDecoratorsWithValidRequest(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/compound-decorators/default-options', server: [
+            'HTTP_X_API_KEY' => 'xyz',
+        ]);
+
+        self::assertResponseIsSuccessful();
+        self::assertResponseFormatSame('json');
+        self::assertResponseStatusCodeSame(200);
+        self::assertResponseHeaderSame('Content-Type', 'application/json');
+        self::assertSame('{"success":true}', $client->getInternalResponse()->getContent());
+    }
 }
