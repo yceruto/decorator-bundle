@@ -16,7 +16,7 @@ Open a command console, enter your project directory and execute:
 $ composer require yceruto/decorator-bundle
 ```
 
-## Available Decorators
+## Bundle Decorators
 
 ### Transactional
 
@@ -58,6 +58,12 @@ class MyController
     }
 }
 ```
+
+## Native Decorators
+
+ * Compound
+
+See https://github.com/yceruto/decorator `README.md` file for details.
 
 ## License
 
