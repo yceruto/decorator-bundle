@@ -3,12 +3,12 @@
 namespace Yceruto\DecoratorBundle\Tests\Integration\App\DecorateController\Controller;
 
 use Symfony\Component\Routing\Attribute\Route;
-use Yceruto\DecoratorBundle\Decorator\Serializer\Serialize;
+use Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator\SecuredSerialize;
 
-#[Route('/serialize-decorator/default-options')]
-class ControllerWithSerializeDecorator
+#[Route('/compound-decorators/default-options')]
+class ControllerWithCompoundDecorator
 {
-    #[Serialize]
+    #[SecuredSerialize]
     public function __invoke(): array
     {
         return ['success' => true];
