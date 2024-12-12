@@ -65,6 +65,13 @@ class MyController
 }
 ```
 
+## Supported Features for Using Decorators
+
+The following features currently support the use of decorators in your application:
+
+ * Controllers
+ * Messenger Handlers (when `symfony/messenger` is installed)
+
 ## License
 
 This software is published under the [MIT License](LICENSE)

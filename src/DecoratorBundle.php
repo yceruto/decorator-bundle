@@ -20,12 +20,14 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Symfony\Component\Serializer\SerializerInterface;
 use Yceruto\Decorator\DecoratorInterface;
 use Yceruto\DecoratorBundle\DependencyInjection\DecoratorsPass;
+use Yceruto\DecoratorBundle\DependencyInjection\MessengerPass;
 
 class DecoratorBundle extends AbstractBundle
 {
     public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new DecoratorsPass());
+        $container->addCompilerPass(new MessengerPass());
     }
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void

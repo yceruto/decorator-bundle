@@ -17,13 +17,13 @@ use Yceruto\Decorator\Attribute\Compound;
 use Yceruto\DecoratorBundle\Decorator\Serializer\Serialize;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-class SecuredSerialize extends Compound
+class HttpSecuredApi extends Compound
 {
     public function getDecorators(array $options): array
     {
         return [
-            new Secured(),
-            new Serialize(),
+            new HttpSecured(),
+            new Serialize(format: 'json'),
         ];
     }
 }
