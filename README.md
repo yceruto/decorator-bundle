@@ -6,7 +6,7 @@
 ![GitHub License](https://img.shields.io/github/license/yceruto/decorator-bundle)
 
 Symfony framework integration of the [`yceruto/decorator`](https://github.com/yceruto/decorator) library.
- * Enables decoration capabilities for Symfony controllers.
+ * Enables decoration capabilities for Symfony controllers and Messenger handlers.
 
 ## Installation
 
