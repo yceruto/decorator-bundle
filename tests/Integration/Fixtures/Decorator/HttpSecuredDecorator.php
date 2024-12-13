@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Yceruto\Decorator\DecoratorInterface;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-final readonly class SecuredDecorator implements DecoratorInterface
+final readonly class HttpSecuredDecorator implements DecoratorInterface
 {
     public function __construct(
         private RequestStack $requestStack,

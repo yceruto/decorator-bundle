@@ -7,7 +7,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.2",
-        "yceruto/decorator": "^1.1",
+        "yceruto/decorator": "1.2.*",
         "symfony/framework-bundle": "^6.4|^7.0"
     },
     "require-dev": {
@@ -15,10 +15,11 @@
         "doctrine/orm": "^3.2",
         "friendsofphp/php-cs-fixer": "^3.64",
         "phpunit/phpunit": "^11.3",
-        "symfony/browser-kit": "^7.1",
-        "symfony/mime": "^7.1",
-        "symfony/serializer": "^7.1",
-        "symfony/yaml": "^7.1"
+        "symfony/browser-kit": "^7.2",
+        "symfony/messenger": "^7.2",
+        "symfony/mime": "^7.2",
+        "symfony/serializer": "^7.2",
+        "symfony/yaml": "^7.2"
     },
     "config": {
         "sort-packages": true

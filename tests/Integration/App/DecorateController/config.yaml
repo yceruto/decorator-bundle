@@ -6,4 +6,4 @@ services:
         autowire: true
         autoconfigure: true
 
-    Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator\SecuredDecorator: ~
+    Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator\HttpSecuredDecorator: ~

@@ -1,0 +1,18 @@
+imports:
+    - '../config.yaml'
+
+framework:
+    messenger:
+        transports:
+            sync: 'sync://'
+
+        routing:
+            Yceruto\DecoratorBundle\Tests\Integration\App\DecorateMessengerHandler\Message\Greeting: sync
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Yceruto\DecoratorBundle\Tests\Integration\App\DecorateMessengerHandler\Controller\DefaultController: ~
+    Yceruto\DecoratorBundle\Tests\Integration\App\DecorateMessengerHandler\Handler\GreetingHandler: ~

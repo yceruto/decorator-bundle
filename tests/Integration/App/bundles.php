@@ -20,11 +20,10 @@ return [
     new FrameworkBundle(),
     new DoctrineBundle(),
     new DecoratorBundle(),
-    new class extends Bundle
-    {
+    new class extends Bundle {
         public function shutdown(): void
         {
             restore_exception_handler();
         }
-    }
+    },
 ];
