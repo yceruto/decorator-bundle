@@ -18,7 +18,7 @@ use Yceruto\Decorator\Attribute\DecoratorAttribute;
 /**
  * Wraps persistence method operations within a single Doctrine transaction.
  */
-#[\Attribute(\Attribute::TARGET_METHOD)]
+#[\Attribute(\Attribute::TARGET_CLASS | \Attribute::TARGET_METHOD)]
 final class Transactional extends DecoratorAttribute
 {
     /**
