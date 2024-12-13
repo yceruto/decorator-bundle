@@ -15,7 +15,7 @@ namespace Yceruto\DecoratorBundle\Decorator\Serializer;
 
 use Yceruto\Decorator\Attribute\DecoratorAttribute;
 
-#[\Attribute(\Attribute::TARGET_METHOD)]
+#[\Attribute(\Attribute::TARGET_CLASS | \Attribute::TARGET_METHOD)]
 final class Serialize extends DecoratorAttribute
 {
     public function __construct(

@@ -39,6 +39,18 @@ class DecorateControllerTest extends AbstractWebTestCase
         self::assertSame('{"success":true}', $client->getInternalResponse()->getContent());
     }
 
+    public function testSerializerDecoratorInInvokable(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/serialize-decorator/invokable');
+
+        self::assertResponseIsSuccessful();
+        self::assertResponseFormatSame('json');
+        self::assertResponseStatusCodeSame(200);
+        self::assertResponseHeaderSame('Content-Type', 'application/json');
+        self::assertSame('{"success":true}', $client->getInternalResponse()->getContent());
+    }
+
     public function testSerializerDecoratorEmptyResult(): void
     {
         $client = self::createClient();
