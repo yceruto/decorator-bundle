@@ -2,7 +2,7 @@
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Yceruto\Decorator\CallableDecorator;
-use Yceruto\Decorator\CompoundDecorator;
+use Yceruto\Decorator\Decorator\CompoundDecorator;
 use Yceruto\Decorator\DecoratorInterface;
 use Yceruto\Decorator\Resolver\DecoratorResolverInterface;
 use Yceruto\DecoratorBundle\Controller\Listener\DecorateControllerListener;

@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Yceruto\DecoratorBundle\Tests\Integration\Fixtures\Decorator;
 
-use Yceruto\Decorator\Attribute\Compound;
+use Yceruto\Decorator\Attribute\CompoundDecoratorAttribute;
 use Yceruto\DecoratorBundle\Decorator\Serializer\Serialize;
 
 #[\Attribute(\Attribute::TARGET_METHOD)]
-class HttpSecuredApi extends Compound
+class HttpSecuredApi extends CompoundDecoratorAttribute
 {
-    public function getDecorators(array $options): array
+    public function getAttributes(array $options): array
     {
         return [
             new HttpSecured(),
